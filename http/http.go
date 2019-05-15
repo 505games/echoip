@@ -231,7 +231,7 @@ func (s *Server) DefaultHandler(w http.ResponseWriter, r *http.Request) *appErro
 		Port         bool
 	}{
 		response,
-		r.Host,
+		strings.Split(r.Host, ":")[0],
 		response.Latitude + 0.05,
 		response.Latitude - 0.05,
 		response.Longitude - 0.05,
